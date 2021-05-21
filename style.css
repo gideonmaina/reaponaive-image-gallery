@@ -1,0 +1,54 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgba(245, 223, 223, 0.938);
+}
+
+.image-grid {
+    width: 98%;
+    margin: 5px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    /* grid-template-rows: minmax(auto, 240px); */
+    gap: 1rem;
+    grid-auto-flow: dense;
+
+}
+
+.image-card {
+    background-color: rgba(11, 6, 78, 0.6);
+    transition: all .3s ease
+}
+
+
+.image-card img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+@media only screen and (min-width:600px) {
+    .span-fullwidth {
+        grid-column: 1/-1;
+    }
+
+    .span-skinny {
+        grid-row: span 2/auto
+    }
+
+    .span-double-col {
+        grid-column: span 2/auto;
+    }
+
+    .span-double-col-row {
+        grid-column: span 2/auto;
+        grid-row: span 2/auto
+    }
+
+}
